@@ -1,0 +1,24 @@
+<!-- Second page to add the book -->
+
+<%- include('../partials/header') %>
+
+    <title>Add Book</title>
+</head>
+<body>
+<h1> Add Wild Book</h1>
+  <ul>
+    <form action="/books" method="POST">
+   
+   <label>Title:
+   <input type="text" name="title">
+  </label><br>
+  <label>Author:
+    <input type="text" name="author">
+  </label><br>
+  <label>Description:
+    <input type="text" name="description">
+  </label><br>
+<input type="submit" value="Add Book">
+  </ul>
+
+  <%- include('../partials/footer') %>
