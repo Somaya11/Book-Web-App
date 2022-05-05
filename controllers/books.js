@@ -10,23 +10,22 @@ module.exports = {
 
 //adding new book
 function newBook(req, res){
-    res.render('books/new')
+    res.render('books/new', { title: 'Add Book'})
 }
 
-// All wild book link
-// function index(req, res){
-//     Book.find({}, function(err, movies){
-//         console.log(books)
-//         res.send('okay')
-//     } )
-// }
 
+function show(req, res){
+ Book.findById(req.params.id, function(err, book) {
+       // res.json(book)
+       res.render('books/show', { title: 'Book Detail', book })
+    })
+   }
 
 // //ALl Wild Book link
 function index(req, res){
     Book.find({}, function(err,books) {
         console.log(books)
-        res.render('books/index', {books})
+        res.render('books/index', {title: 'All Books', books})
         
     })
     
@@ -46,12 +45,3 @@ function create(req, res) {
       res.redirect('/books');
     });
   }
-
-function show(req, res){
- 
- Book.findById(req.params.id, function(err, book) {
-     console.log(book)
-     res.json(book)
-    //  res.render('book/show', { book })
- })
-}
