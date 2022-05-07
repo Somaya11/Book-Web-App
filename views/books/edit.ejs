@@ -1,0 +1,34 @@
+<!-- Second page to add the book -->
+
+<%- include('../partials/header') %>
+
+    <title>edit Book</title>
+</head>
+<body >
+<h1 class="editBook"> Edit Wild Book</h1>
+
+  <ul >
+    <form action="/books/<%= book.id %>?_method=PUT" method="POST">
+      
+      <div class="editTitle"> 
+   <label>Title:
+   <input type="text" name="title" value="<%=book.title %>">
+  </label><br>
+  </div>
+
+  <div class="editAuthor"> 
+  <label>Author:
+    <input type="text" name="author" value="<%=book.author %>" >
+  </label><br>
+  </div> 
+
+  <div class="editDescription"> 
+  <label>Description:
+    <input type="text" name="description" value="<%=book.description %>">
+  </label><br>
+</div>
+<input type="submit" class= "editbtn" value="Edit Book" > 
+</form>
+  </ul>
+</body>
+  <%- include('../partials/footer') %>

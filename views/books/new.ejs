@@ -2,23 +2,37 @@
 
 <%- include('../partials/header') %>
 
-    <title>Add Book</title>
-</head>
 <body>
-<h1> Add Wild Book</h1>
-  <ul>
+
+  <h1 class="adBook"> Add Wild Book</h1>
     <form action="/books" method="POST">
-   
-   <label>Title:
+  
+
+
+  <div class="title">   
+
+    <label>Title:
    <input type="text" name="title">
-  </label><br>
+   
+  </label> 
+  </div> 
+
+  <div class="author">  
   <label>Author:
     <input type="text" name="author">
-  </label><br>
+  </label>
+</div>
+
+<div class="description">  
   <label>Description:
     <input type="text" name="description">
-  </label><br>
-<input type="submit" value="Add Book">
-  </ul>
+  </label>
+</div>
+ 
 
+<input type="submit" class="adbtn" value="Add Book">
+</body>
+
+
+</form>
   <%- include('../partials/footer') %>

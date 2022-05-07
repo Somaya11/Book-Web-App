@@ -1,28 +1,51 @@
 <%- include('../partials/header') %>
-  <h1>Wild Library</h1>
-  <table>
+  
+<body>
+<h1 class="library">Wild Library</h1>
+
+ 
+  <table id="list">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Description</th>
+        <th class="titleLibrary">Title</th>
+        <th class="authorLibrary">Author</th>
+        <th class="DescriptionLibrary">Description</th>
+      
       </tr>
     </thead>
-    <tbody>
-      <!-- Write the line of EJS to iterate over movies using forEach -->
+    <tbody >
+      
       <% books.forEach(function(b){ %> 
       
       <tr>
+        
           <td><a href="/books/<%= b.id %>">
-            <%= b.title %>
+            
+            <form action="/books/<%= b.id %>?_method=DELETE" class="deleteBtn" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+
+            
+            <a href="/books/<%= b.id %>/edit" class="editBtn">
+              <button type="submit">Edit</button>
+            </a>
+            
+
+            <a class="reviewBtn"  >
+           
+            <button type="submit" <%= b.title %>>Add Review</button>
           </a>
+    
+        
         </td>  
-          <td><%= b.author %></td>
-          <td><%= b.description %></td>
+        <td class="titleLibrarytwo"><%= b.title %></td>
+          <td class="authorLibrarytwo"><%= b.author %></td>
+          <td class="DescriptionLibrarytwo"><%= b.description %></td>
+        
         </tr>
    <% }) %>
-      <!-- Close the forEach using EJS here -->
     </tbody>
   </table>
+</body>
 
   <%- include('../partials/footer') %>

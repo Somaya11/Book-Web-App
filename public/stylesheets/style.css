@@ -1,8 +1,139 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.mainbody {
+  position: relative; 
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainbody::before{
+  content: "";
+  background-image: url('https://images.csmonitor.com/csm/2022/03/1135846_1_0311-10-Best_standard.jpg?alias=standard_900x600');
+  background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.75;
 }
 
-a {
-  color: #00B7FF;
+body{
+  background-color: bisque;
+}
+
+.library{
+  position: absolute; top: 10%; left: 50%;
+}
+
+table th{
+  padding: 10px;
+  text-align: center;
+
+}
+
+#list td:nth-child(2), #list td:nth-child(3){
+  min-width: 100px;
+}
+
+#list a {
+  border-radius: 4px;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+ 
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+
+}
+
+
+.mainbtn{
+  position: absolute; top: 50px; right: 700px;
+  color: aliceblue;
+}
+
+.mainbtnTwo{
+  position: absolute; top:50px; right: 1000px;
+  color: aliceblue;
+}
+
+.mainTitle{
+  position: absolute; top: 30%; left: 45%;
+  font-size: 50px;
+  color: aliceblue;
+
+}
+
+.quote{
+  position: absolute; top: 40%; left: 40%;
+  font-size: xx-large;
+  color: aliceblue;
+  font-weight: bolder;
+}
+/* All Wild Books */
+.btn {
+  position: absolute; top: 50px; right: 700px;
+  color: aliceblue;
+}
+
+a[href] {
+  font-weight: bolder;
+  font-size: 200%;
+  color: aliceblue;
+  background-color: rgb(220, 190, 148);
+  text-decoration: none; 
+  border-radius: 25px;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+
+}
+/* Add Wild Book */
+.btnTwo{
+  position: absolute; top:50px; right: 1000px;
+}
+
+.title{
+  position: absolute; top: 200px; right: 800px;
+}
+
+.author{
+  position: absolute; top: 250px; right: 800px;
+}
+
+.description{
+  position: absolute; top: 300px; right: 800px;
+}
+
+.adbtn{
+  position: absolute; top: 350px; right: 800px;
+}
+
+.editTitle{
+  position: absolute; top: 200px; right: 800px;
+}
+
+.editAuthor{
+  position: absolute; top: 250px; right: 800px;
+}
+
+.editDescription{
+  position: absolute; top: 300px; right: 800px;
+}
+
+.editbtn {
+  position: absolute; top: 350px; right: 800px;
+}
+
+
+.editBook{
+  position: absolute; top: 100px; right: 800px;
+}
+
+.adBook{
+  position: absolute; top: 100px; right: 800px;
 }

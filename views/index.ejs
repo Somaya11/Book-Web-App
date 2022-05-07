@@ -3,13 +3,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+    <title ><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-  <body>
-    <a href="/books"> All Wild Books</a>
-    <a href="/books/new"> Add Wild Book</a>
-    <h1><%= title %></h1>
-    <p>A Wild Book A Day Keeps Reality Away</p>
+
+  <body class = "mainbody">
+      <div class = "mainbtn">
+       <a href="/books" > All Wild Books</a> 
+       </div>
+
+       <div class = "mainbtnTwo">
+     <a href="/books/new"> Add Wild Book</a> 
+    </div>
+   
+  
+      <h2 class = "mainTitle"> <%= title %></h1>
+   
+    
+    <p class = "quote" >A Wild Book A Day Keeps Reality Away</p>
+
+
   </body>
+
+  
 </html>

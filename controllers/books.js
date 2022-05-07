@@ -1,11 +1,14 @@
-const book = require('../models/book')
+
 const Book = require('../models/book')
 
 module.exports = {
     new: newBook,
     create,
     index,
-    show
+    show,
+    delete: deleteBook,
+    edit,
+    update
 }
 
 //adding new book
@@ -16,7 +19,7 @@ function newBook(req, res){
 
 function show(req, res){
  Book.findById(req.params.id, function(err, book) {
-       // res.json(book)
+       // res.json(book)S
        res.render('books/show', { title: 'Book Detail', book })
     })
    }
@@ -45,3 +48,24 @@ function create(req, res) {
       res.redirect('/books');
     });
   }
+
+  function deleteBook(req, res) {
+    Book.findByIdAndDelete(req.params.id, function(err){
+      if(err) return res.send(err)
+      res.redirect('/books');
+    })
+ 
+    
+  }
+function edit(req, res){
+  Book.findById(req.params.id, function (err, book) {
+    res.render('books/edit', {book})
+  });
+ 
+}
+
+function update(req, res){
+Book.updateOne({_id: req.params.id}, req.body , function (err, book) {
+  res.redirect('/books/' + req.params.id)
+});
+}
